@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Lezada</string>
+    <string name="forgot_password_title">Quên Mật Khẩu</string>
+    <string name="email_hint">Nhập Email</string>
+    <string name="reset_button_text">Đặt Lại Mật Khẩu</string>
+
+</resources>

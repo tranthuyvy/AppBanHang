@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.DangNhapActivity">
+    <ImageView
+        android:id="@+id/img_logo"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="90sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/ic_logo"
+        android:layout_width="200sp"
+        android:layout_height="200sp"/>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/line1"
+        app:layout_constraintTop_toBottomOf="@+id/img_logo"
+        android:layout_marginTop="5sp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/email"
+            android:hint="Email"
+            android:textColorHint="@color/white"
+            android:inputType="textEmailAddress"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp"
+            android:drawableLeft="@drawable/ic_email_24"
+            android:drawablePadding="5sp"
+            android:background="@drawable/custom_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/line2"
+        app:layout_constraintTop_toBottomOf="@+id/line1"
+        android:layout_marginTop="15sp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/pass"
+            android:hint="Mật Khẩu"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp"
+            android:inputType="textPassword"
+            android:background="@drawable/custom_edit"
+            android:drawableLeft="@drawable/ic_key_24"
+            android:drawablePadding="5sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btndangnhap"
+        app:layout_constraintTop_toBottomOf="@+id/line2"
+        android:background="@drawable/background_buttton"
+        android:textColor="@color/white"
+        android:layout_marginRight="25sp"
+        android:layout_marginLeft="25sp"
+        android:layout_marginTop="20sp"
+        android:text="Đăng Nhập"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:id="@+id/line6"
+        android:layout_marginTop="20sp"
+        android:layout_marginLeft="10sp"
+        android:layout_marginRight="10sp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/btndangnhap"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="Chưa Có Tài Khoản?"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/txtdangki"
+            android:layout_marginLeft="5sp"
+            android:text="Đăng Ký"
+            android:textSize="16sp"
+            android:textColor="@color/design_default_color_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

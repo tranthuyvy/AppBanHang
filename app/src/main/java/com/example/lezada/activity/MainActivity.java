@@ -21,7 +21,6 @@ import android.widget.AdapterView;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
@@ -138,19 +137,19 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(trangchu);
                         break;
                     case 1:
-                        Intent cheapproduct = new Intent(getApplicationContext(), CheapProductActivity.class);
-                        cheapproduct.putExtra("loai",1);
-                        startActivity(cheapproduct);
+                        Intent samsungproduct = new Intent(getApplicationContext(), SamsungProductActivity.class);
+                        samsungproduct.putExtra("loai",1);
+                        startActivity(samsungproduct);
                         break;
                     case 2:
-                        Intent averageproduct = new Intent(getApplicationContext(), CheapProductActivity.class);
-                        averageproduct.putExtra("loai",2);
-                        startActivity(averageproduct);
+                        Intent appleproduct = new Intent(getApplicationContext(), SamsungProductActivity.class);
+                        appleproduct.putExtra("loai",2);
+                        startActivity(appleproduct);
                         break;
                     case 3:
-                        Intent expensiveproduct = new Intent(getApplicationContext(), CheapProductActivity.class);
-                        expensiveproduct.putExtra("loai",3);
-                        startActivity(expensiveproduct);
+                        Intent ortherproduct = new Intent(getApplicationContext(), SamsungProductActivity.class);
+                        ortherproduct.putExtra("loai",3);
+                        startActivity(ortherproduct);
                         break;
                     case 4:
                         Intent donhang = new Intent(getApplicationContext(), XemDonActivity.class);

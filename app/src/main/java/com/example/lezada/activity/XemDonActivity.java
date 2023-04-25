@@ -119,21 +119,20 @@ public class XemDonActivity extends AppCompatActivity {
         List<String> list = new ArrayList<>();
         list.add("Lựa Chọn:");
         list.add("Đang Xử Lý");
-        list.add("Đang Chuẩn Bị Đơn");
         list.add("Đang Giao Hàng");
-        list.add("Giao Hàng Thành Công");
+        list.add("Đã Giao");
         list.add("Hủy Đơn Hàng");
         list.add("Yêu Cầu Trả Hàng, Hoàn Tiền");
 
         //Đổ dữ liệu từ list vào spinner
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, list);
         spinner.setAdapter(adapter);
-        spinner.setSelection(5);
+        spinner.setSelection(4);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 tinhtrang = position;
-                if ( position == 5 || position == 6){
+                if ( position == 4 || position == 5){
                     btnxacnhan.setVisibility(View.VISIBLE);
                 }else {
                     btnxacnhan.setVisibility(View.GONE);

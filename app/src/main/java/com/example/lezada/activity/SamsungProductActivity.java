@@ -13,7 +13,7 @@ import android.widget.Toast;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.lezada.R;
-import com.example.lezada.adapter.CheapProductAdapter;
+import com.example.lezada.adapter.SamsungProductAdapter;
 import com.example.lezada.model.SanPhamMoi;
 import com.example.lezada.retrofit.ApiBanHang;
 import com.example.lezada.retrofit.RetrofitClient;
@@ -26,14 +26,14 @@ import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
-public class CheapProductActivity extends AppCompatActivity {
+public class SamsungProductActivity extends AppCompatActivity {
     Toolbar toolbar;
     RecyclerView recyclerView;
     ApiBanHang apiBanHang;
     CompositeDisposable compositeDisposable = new CompositeDisposable();
     int page = 1;
     int loai;
-    CheapProductAdapter adapterCp;
+    SamsungProductAdapter adapterCp;
     List<SanPhamMoi> sanPhamMoiList;
     LinearLayoutManager linearLayoutManager;
     Handler handler = new Handler();
@@ -42,7 +42,7 @@ public class CheapProductActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cheap_product);
+        setContentView(R.layout.activity_samsung_product);
         apiBanHang = RetrofitClient.getInstance(Utils.BASE_URL).create(ApiBanHang.class);
         loai = getIntent().getIntExtra("loai", 1);
         AnhXa();
@@ -103,7 +103,7 @@ public class CheapProductActivity extends AppCompatActivity {
                        if (sanPhamMoiModel.isSuccess()){
                            if (adapterCp == null){
                                sanPhamMoiList = sanPhamMoiModel.getResult();
-                               adapterCp = new CheapProductAdapter(getApplicationContext(), sanPhamMoiList);
+                               adapterCp = new SamsungProductAdapter(getApplicationContext(), sanPhamMoiList);
                                recyclerView.setAdapter(adapterCp);
                            }else {
                                int vitri = sanPhamMoiList.size()-1;

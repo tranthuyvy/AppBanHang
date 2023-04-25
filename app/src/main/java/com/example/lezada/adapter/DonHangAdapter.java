@@ -76,18 +76,15 @@ public class DonHangAdapter extends RecyclerView.Adapter<DonHangAdapter.MyViewHo
                 result = "Đang Xử Lý";
                 break;
             case 2:
-                result = "Đã Xác Nhận Đơn";
-                break;
-            case 3:
                 result = "Đang Giao Hàng";
                 break;
-            case 4:
+            case 3:
                 result = "Giao Hàng Thành Công";
                 break;
-            case 5:
+            case 4:
                 result = "Đã Hủy";
                 break;
-            case 6:
+            case 5:
                 result = "Đang Xử Lý Yêu Cầu";
                 break;
         }

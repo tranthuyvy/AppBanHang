@@ -21,14 +21,14 @@ import com.example.lezada.model.SanPhamMoi;
 import java.text.DecimalFormat;
 import java.util.List;
 
-public class CheapProductAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class SamsungProductAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     Context context;
     List<SanPhamMoi> array;
     private static final int VIEW_TYPE_DATA = 0;
     private static final int VIEW_TYPE_LOADING = 1;
 
 
-    public CheapProductAdapter(Context context, List<SanPhamMoi> array) {
+    public SamsungProductAdapter(Context context, List<SanPhamMoi> array) {
         this.context = context;
         this.array = array;
     }
@@ -37,7 +37,7 @@ public class CheapProductAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         if (viewType == VIEW_TYPE_DATA){
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_cheapproduct, parent, false);
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_samsungproduct, parent, false);
             return new MyViewHolder(view);
         }else {
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_loading, parent, false);

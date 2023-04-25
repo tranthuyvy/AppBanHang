@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.CheapProductActivity">
+    tools:context=".activity.SamsungProductActivity">
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        app:title="Cheap Product"
+        app:title="Samsung"
         app:titleTextColor="@color/white"
         android:background="@color/toolBarColor"
         app:layout_constraintTop_toTopOf="parent"

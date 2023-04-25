@@ -13,7 +13,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.lezada.R;
-import com.example.lezada.adapter.CheapProductAdapter;
+import com.example.lezada.adapter.SamsungProductAdapter;
 import com.example.lezada.model.SanPhamMoi;
 import com.example.lezada.retrofit.ApiBanHang;
 import com.example.lezada.retrofit.RetrofitClient;
@@ -30,7 +30,7 @@ public class SearchActivity extends AppCompatActivity {
     Toolbar toolbar;
     RecyclerView recyclerView;
     EditText edtsearch;
-    CheapProductAdapter adapterCp;
+    SamsungProductAdapter adapterCp;
     List<SanPhamMoi> sanPhamMoiList;
     ApiBanHang apiBanHang;
     CompositeDisposable compositeDisposable = new CompositeDisposable();
@@ -64,7 +64,7 @@ public class SearchActivity extends AppCompatActivity {
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 if (charSequence.length() == 0){
                     sanPhamMoiList.clear();
-                    adapterCp = new CheapProductAdapter(getApplicationContext(), sanPhamMoiList);
+                    adapterCp = new SamsungProductAdapter(getApplicationContext(), sanPhamMoiList);
                     recyclerView.setAdapter(adapterCp);
 
                 }else {
@@ -89,13 +89,15 @@ public class SearchActivity extends AppCompatActivity {
                         sanPhamMoiModel -> {
                             if (sanPhamMoiModel.isSuccess()){
                                 sanPhamMoiList = sanPhamMoiModel.getResult();
-                                adapterCp = new CheapProductAdapter(getApplicationContext(), sanPhamMoiList);
+                                adapterCp = new SamsungProductAdapter(getApplicationContext(), sanPhamMoiList);
                                 recyclerView.setAdapter(adapterCp);
                             }
 
                         },
                         throwable -> {
-                            Toast.makeText(getApplicationContext(), throwable.getMessage(), Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(getApplicationContext(), throwable.getMessage(), Toast.LENGTH_SHORT).show();
+                            sanPhamMoiList.clear();
+                            adapterCp.notifyDataSetChanged();
                         }
                 ));
     }

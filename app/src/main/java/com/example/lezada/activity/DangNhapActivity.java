@@ -34,7 +34,7 @@ import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class DangNhapActivity extends AppCompatActivity {
-    TextView txtdangki;
+    TextView txtdangki, txtresetpass;
     EditText email, pass;
     FirebaseAuth firebaseAuth;
     FirebaseUser user;
@@ -59,13 +59,13 @@ public class DangNhapActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-//        txtresetpass.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(getApplicationContext(), ResetPassActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+        txtresetpass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ResetPassActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
         btndangnhap.setOnClickListener(new View.OnClickListener() {
@@ -82,10 +82,11 @@ public class DangNhapActivity extends AppCompatActivity {
                     Paper.book().write("email", str_email);
                     Paper.book().write("pass", str_pass);
                     if (user != null){
-                        //user đã có đăng nhập firebase
+                        //user đã có đăng nhập firebase, chưa signout
                         dangNhap(str_email, str_pass);
                     }else {
                         //user đã đăng xuất
+                        //đang quản lý mật khẩu trên firebase + host
                         firebaseAuth.signInWithEmailAndPassword(str_email, str_pass)
                                 .addOnCompleteListener(DangNhapActivity.this, new OnCompleteListener<AuthResult>() {
                                     @Override
@@ -105,6 +106,7 @@ public class DangNhapActivity extends AppCompatActivity {
         Paper.init(this);
         apiBanHang = RetrofitClient.getInstance(Utils.BASE_URL).create(ApiBanHang.class);
         txtdangki = findViewById(R.id.txtdangki);
+        txtresetpass = findViewById(R.id.txtresetpass);
         email = findViewById(R.id.email);
         pass = findViewById(R.id.pass);
         btndangnhap = findViewById(R.id.btndangnhap);

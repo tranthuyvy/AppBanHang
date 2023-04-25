@@ -8,8 +8,8 @@ import java.util.List;
 
 public class Utils {
     //ipconfig => lấy địa chỉ IPv4
-    public static final String BASE_URL="http://192.168.1.114:8080/lezada/";
-//    public static final String BASE_URL="http://192.168.99.77:8080/lezada/";
+    public static final String BASE_URL="http://192.168.1.115:8080/lezada/";
+//    public static final String BASE_URL="http://192.168.43.31:8080/lezada/";
     public static List<GioHang> manggiohang;    //mang chua san pham khong check
     public static List<GioHang> mangmuahang = new ArrayList<>();    //mang chua san pham co check
     public static User user_current = new User();

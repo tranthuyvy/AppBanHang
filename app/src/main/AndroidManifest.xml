@@ -68,13 +68,13 @@
             android:name=".activity.ChiTietActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.ExpensiveProductActivity"
+            android:name=".activity.OrtherProductActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.AverageProductActivity"
+            android:name=".activity.AppleProductActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.CheapProductActivity"
+            android:name=".activity.SamsungProductActivity"
             android:exported="false" />
         <activity
             android:name=".activity.MainActivity"

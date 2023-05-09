@@ -8,6 +8,7 @@ public class DonHang {
     String diachi;
     String sodienthoai;
     String tongtien;
+    String email;
     int trangthai;
     List<Item> item;
 
@@ -17,6 +18,14 @@ public class DonHang {
 
     public void setTrangthai(int trangthai) {
         this.trangthai = trangthai;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public int getId() {

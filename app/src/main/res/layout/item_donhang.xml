@@ -22,6 +22,7 @@
                     android:text="Đơn Hàng: 5"
                     android:textColor="@color/design_default_color_error"
                     android:textStyle="bold"
+                    android:textSize="15sp"
                     android:layout_marginLeft="5sp"
                     android:padding="5sp"
                     android:layout_width="wrap_content"
@@ -29,6 +30,7 @@
                 <TextView
                     android:clickable="true"
                     android:id="@+id/tinhtrang"
+                    android:textSize="15sp"
                     android:text="Đơn Hàng Đang Được"
                     android:textColor="@color/purple_700"
                     android:textStyle="bold"
@@ -36,6 +38,48 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </LinearLayout>
+            <TextView
+                android:id="@+id/email_donhang"
+                android:layout_margin="10sp"
+                android:text="Email: "
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/sdt_donhang"
+                android:layout_marginRight="10sp"
+                android:layout_marginBottom="10sp"
+                android:layout_marginLeft="10sp"
+                android:text="SĐT: "
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/diachi_donhang"
+                android:layout_marginRight="10sp"
+                android:layout_marginBottom="10sp"
+                android:layout_marginLeft="10sp"
+                android:text="Địa chỉ: "
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/tongtien_donhang"
+                android:layout_marginRight="10sp"
+                android:layout_marginBottom="10sp"
+                android:layout_marginLeft="10sp"
+                android:text="Tổng Tiền: "
+                android:textColor="#027C07"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_marginLeft="10sp"

@@ -51,11 +51,12 @@
                             android:layout_gravity="top|right"
                             android:layout_width="28sp"
                             android:layout_height="28sp"/>
+
                         <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="39dp"
                             android:layout_marginTop="15sp"
-                            android:src="@drawable/ic_shopping_cart_24"
-                            android:layout_width="35sp"
-                            android:layout_height="35sp"/>
+                            android:src="@drawable/ic_shopping_cart_24" />
                     </FrameLayout>
                 </LinearLayout>
 

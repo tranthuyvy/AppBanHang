@@ -44,6 +44,10 @@ public class DonHangAdapter extends RecyclerView.Adapter<DonHangAdapter.MyViewHo
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         DonHang donHang = listdonhang.get(position);
         holder.txtdonhang.setText("Đơn hàng: " + donHang.getId());
+        holder.email.setText("Email: "+ donHang.getEmail());
+        holder.sdt.setText("SĐT: " + donHang.getSodienthoai());
+        holder.diachi.setText("Địa chỉ: " + donHang.getDiachi());
+        holder.tongtien.setText("Tổng Tiền: " + donHang.getTongtien());
         holder.trangthai.setText(trangThaiDon(donHang.getTrangthai()));
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(
@@ -97,7 +101,7 @@ public class DonHangAdapter extends RecyclerView.Adapter<DonHangAdapter.MyViewHo
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnLongClickListener {
-        TextView txtdonhang, trangthai;
+        TextView txtdonhang, trangthai, diachi, sdt, tongtien, email;
         RecyclerView reChiTiet;
         ItemClickListener listener;
 
@@ -105,6 +109,10 @@ public class DonHangAdapter extends RecyclerView.Adapter<DonHangAdapter.MyViewHo
             super(itemView);
             txtdonhang = itemView.findViewById(R.id.iddonhang);
             trangthai = itemView.findViewById(R.id.tinhtrang);
+            email = itemView.findViewById(R.id.email_donhang);
+            sdt = itemView.findViewById(R.id.sdt_donhang);
+            diachi = itemView.findViewById(R.id.diachi_donhang);
+            tongtien = itemView.findViewById(R.id.tongtien_donhang);
             reChiTiet = itemView.findViewById(R.id.recycleview_chitiet);
             itemView.setOnLongClickListener(this);
         }

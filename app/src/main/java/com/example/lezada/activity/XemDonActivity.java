@@ -7,6 +7,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -148,13 +149,30 @@ public class XemDonActivity extends AppCompatActivity {
         btnxacnhan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                capNhapDonHang();
+                showConfirmationDialog();
+//                capNhapDonHang();
             }
         });
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setView(view);
         dialog = builder.create();
+        dialog.show();
+    }
+
+    private void showConfirmationDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Xác nhận hủy đơn hàng");
+        builder.setMessage("Bạn có chắc chắn muốn hủy đơn hàng?");
+        builder.setPositiveButton("Có", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                // hủy đơn hàng
+                capNhapDonHang();
+            }
+        });
+        builder.setNegativeButton("Không", null);
+        AlertDialog dialog = builder.create();
         dialog.show();
     }
 

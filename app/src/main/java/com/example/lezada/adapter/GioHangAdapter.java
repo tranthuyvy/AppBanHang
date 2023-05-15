@@ -27,6 +27,8 @@ import org.greenrobot.eventbus.EventBus;
 import java.text.DecimalFormat;
 import java.util.List;
 
+import io.paperdb.Paper;
+
 public class GioHangAdapter extends RecyclerView.Adapter<GioHangAdapter.MyViewHolder> {
 
     Context context;
@@ -58,9 +60,14 @@ public class GioHangAdapter extends RecyclerView.Adapter<GioHangAdapter.MyViewHo
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b){
-                    Utils.mangmuahang.add(gioHang);
+                    Utils.manggiohang.get(holder.getAdapterPosition()).setChecked(true);
+                    if (!Utils.mangmuahang.contains(gioHang)){
+                        Utils.mangmuahang.add(gioHang);
+                    }
+
                     EventBus.getDefault().postSticky(new TinhTongEvent());
                 }else {
+                    Utils.manggiohang.get(holder.getAdapterPosition()).setChecked(false);
                     for (int i = 0; i < Utils.mangmuahang.size(); i++){
                         if (Utils.mangmuahang.get(i).getIdsp() == gioHang.getIdsp()){
                             Utils.mangmuahang.remove(i);
@@ -70,6 +77,8 @@ public class GioHangAdapter extends RecyclerView.Adapter<GioHangAdapter.MyViewHo
                 }
             }
         });
+
+        holder.checkBox.setChecked(gioHang.isChecked());
 
 
         holder.setListener(new ImageClickListener() {
@@ -91,7 +100,9 @@ public class GioHangAdapter extends RecyclerView.Adapter<GioHangAdapter.MyViewHo
                         builder.setPositiveButton("Đồng Ý", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
+                                Utils.manggiohang.remove(gioHang);
                                 Utils.manggiohang.remove(pos);
+                                Paper.book().write("giohang", Utils.manggiohang);
                                 notifyDataSetChanged();
                                 EventBus.getDefault().postSticky(new TinhTongEvent());
                             }

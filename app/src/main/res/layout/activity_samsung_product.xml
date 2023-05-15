@@ -7,7 +7,7 @@
     tools:context=".activity.SamsungProductActivity">
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        app:title="Samsung"
+        app:title="Điện Thoại"
         app:titleTextColor="@color/white"
         android:background="@color/toolBarColor"
         app:layout_constraintTop_toTopOf="parent"

@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.lezada.R;
+import com.example.lezada.model.GioHang;
 import com.example.lezada.model.NotificationSendData;
 import com.example.lezada.retrofit.ApiBanHang;
 import com.example.lezada.retrofit.ApiPushNotification;
@@ -29,6 +30,7 @@ import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Map;
 
+import io.paperdb.Paper;
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
@@ -202,7 +204,16 @@ public class ThanhToanActivity extends AppCompatActivity {
                                     messageModel -> {
                                         pushNotiToUser();
                                         Toast.makeText(getApplicationContext(), "Thành Công", Toast.LENGTH_SHORT).show();
+
+                                        //
+                                        for (int i = 0; i < Utils.mangmuahang.size(); i++){
+                                            GioHang gioHang = Utils.mangmuahang.get(i);
+                                            if (Utils.manggiohang.contains(gioHang)){
+                                                Utils.manggiohang.remove(gioHang);
+                                            }
+                                        }
                                         Utils.mangmuahang.clear();
+                                        Paper.book().write("giohang", Utils.manggiohang);
                                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                                         startActivity(intent);
                                         finish();

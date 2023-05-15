@@ -23,6 +23,8 @@ import com.nex3z.notificationbadge.NotificationBadge;
 
 import java.text.DecimalFormat;
 
+import io.paperdb.Paper;
+
 public class ChiTietActivity extends AppCompatActivity {
     TextView tensp, giasp, mota;
     Button btnthem;
@@ -48,6 +50,7 @@ public class ChiTietActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 themGioHang();
+                Paper.book().write("giohang", Utils.manggiohang);
 
             }
         });

@@ -269,6 +269,9 @@ public class MainActivity extends AppCompatActivity {
         //khoi tao List
         mangloaisp = new ArrayList<>();
         mangSpMoi = new ArrayList<>();
+        if (Paper.book().read("giohang") != null){
+            Utils.manggiohang = Paper.book().read("giohang");
+        }
         if (Utils.manggiohang == null){
             Utils.manggiohang = new ArrayList<>();
         }else {

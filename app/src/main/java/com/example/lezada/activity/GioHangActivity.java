@@ -79,7 +79,7 @@ public class GioHangActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), ThanhToanActivity.class);
                 intent.putExtra("tongtien", tongtiensp);
-                Utils.manggiohang.clear();
+//                Utils.manggiohang.clear();
                 startActivity(intent);
             }
         });

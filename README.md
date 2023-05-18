@@ -1,2 +1,2 @@
 # Lezada
-App Bán Hàng Android Studio
+App Bán Điện Thoại Android Studio

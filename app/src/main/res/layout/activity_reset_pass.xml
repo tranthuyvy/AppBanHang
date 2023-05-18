@@ -5,6 +5,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".activity.ResetPassActivity">
+    <ImageView
+        android:id="@+id/img_logo"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="80sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/ic_logo"
+        android:layout_width="200sp"
+        android:layout_height="200sp"/>
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/line1"
         app:layout_constraintTop_toTopOf="parent"

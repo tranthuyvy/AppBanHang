@@ -7,6 +7,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -19,6 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
 
 public class ResetPassActivity extends AppCompatActivity {
+    ImageView img_logo;
     EditText email;
     Button btnreset;
     ApiBanHang apiBanHang;
@@ -57,6 +59,7 @@ public class ResetPassActivity extends AppCompatActivity {
 
     private void initView() {
         apiBanHang = RetrofitClient.getInstance(Utils.BASE_URL).create(ApiBanHang.class);
+        img_logo = findViewById(R.id.img_logo);
         email = findViewById(R.id.edtresetpass);
         btnreset = findViewById(R.id.btnresetpass);
         progressBar = findViewById(R.id.progressbar);
